@@ -1,0 +1,3 @@
+"C:\Program Files\JetBrains\CLion 2019.1.2\bin\cmake\win\bin\cmake.exe" -E remove -f CMakeFiles\How_much_did_the_businessman_lose.dir/objects.a
+C:\MinGW\bin\ar.exe cr CMakeFiles\How_much_did_the_businessman_lose.dir/objects.a @CMakeFiles\How_much_did_the_businessman_lose.dir\objects1.rsp
+C:\MinGW\bin\g++.exe -g   -Wl,--whole-archive CMakeFiles\How_much_did_the_businessman_lose.dir/objects.a -Wl,--no-whole-archive  -o How_much_did_the_businessman_lose.exe -Wl,--out-implib,libHow_much_did_the_businessman_lose.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\How_much_did_the_businessman_lose.dir\linklibs.rsp
