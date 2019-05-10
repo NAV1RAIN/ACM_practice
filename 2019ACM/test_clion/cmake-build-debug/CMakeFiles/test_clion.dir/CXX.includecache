@@ -7,16 +7,6 @@
 #IncludeRegexTransform: 
 
 F:/ACM/2019ACM/test_clion/main.cpp
-iostream
--
-algorithm
--
-cstdio
--
-queue
--
-vector
--
-string.h
+bits/stdc++.h
 -
 

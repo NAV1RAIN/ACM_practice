@@ -1,80 +1,49 @@
-#include <iostream>
-#include <algorithm>
-#include <cstdio>
-#include <queue>
-#include <vector>
-#include <string.h>
-using namespace std;
-#define maxn 205
-#define inf 0x3f3f3f
-int a[maxn];
-int mp[maxn][maxn];
-int d[maxn][maxn];
-int dis[maxn][maxn][maxn];
-int zhi[maxn];
-int shu[maxn][maxn];
-int n,m;
-vector<int>v[maxn];
-void bfs(int x)
+#include <bits/stdc++.h>
+
+const int N = 2005, ZZQ = 998244353;
+
+int n, p2[N], ans, fa[N], top[N];
+char s[N];
+
+int cx(int x)
 {
-    memset(zhi,0,sizeof(zhi));
-    zhi[x]=0;
-    queue<int>que;
-    que.push(x);
-    while(que.size())
-    {
-        int y=que.front();
-        que.pop();
-        int len=v[y].size();
-        for(int i=0;i<len;i++)
-        {
-            if (zhi[y]+1<=d[x][v[y][i]]){
-                zhi[v[y][i]]=zhi[y]+1;
-                dis[x][v[y][i]][zhi[v[y][i]]]=dis[x][v[y][i]][zhi[v[y][i]]]+dis[x][y][zhi[y]]+a[v[y][i]];
-                shu[x][v[y][i]]++;
-                que.push(v[y][i]);
-            }
-        }
-    }
-    return;
+    if (fa[x] == x) return x;
+    int y = cx(fa[x]); top[x] ^= top[fa[x]];
+    fa[x] = y;
 }
+
+bool zm(int x, int y, int op)
+{
+    int ix = cx(x), iy = cx(y);
+    if (ix != iy) return fa[iy] = ix, top[iy] = op ^ top[x] ^ top[y], 1;
+    return top[x] ^ top[y] ^ (!op) & 1;
+}
+
+int solve(int st)
+{
+    for (int i = 1; i <= (n << 1); i++) fa[i] = i, top[i] = 0;
+    for (int i = 1; (i << 1) <= n; i++) zm(i, n - i + 1, 0);
+    for (int i = 1; (i << 1) <= n - st + 1; i++)
+        zm(st + i - 1 + n, (n << 1) - i + 1, 0);
+    for (int i = 1; i <= n; i++) if (s[i] != '?')
+            if (!zm(i, i + n, s[i] - '0')) return 0;
+    for (int i = 1; i < st - 1; i++)
+        if (!zm(i + n, i + 1 + n, 0)) return 0;
+    if (!zm(1, 1 + n, 1)) return 0;
+    if (!zm(st - 1 + n, st + n, 1)) return 0;
+    int cnt = 0;
+    for (int i = 1; i <= (n << 1); i++) if (fa[i] == i) cnt++;
+    return p2[cnt - 1];
+}
+
 int main()
 {
-    cin>>n>>m;
-    for(int i=1;i<=n;++i)
-        cin>>a[i];
-    for(int i=1;i<n;i++)
-        for(int j=1;j<=n;j++)
-        {
-            if(i!=j)
-                d[i][j]=d[j][i]=inf;
-        }
-    for(int i=0;i<m;i++)
-    {
-        int x,y;
-        cin>>x>>y;
-        mp[x][y]=mp[y][x]=1;
-        d[x][y]=d[y][x]=1;
-        v[x].push_back(y);
-        v[y].push_back(x);
-    }
-    for(int i=1;i<=n;i++)
-        for(int j=1;j<=n;j++)
-            for(int k=1;k<=n;k++)
-            {
-                d[i][j]=min(d[i][j],d[i][k]+d[k][j]);
-            }
-    for(int i=1;i<=n;i++)
-    {
-        bfs(i);
-    }
-    int q;
-    cin>>q;
-    while(q--)
-    {
-        int x,y;
-        cin>>x>>y;
-        cout<<dis[x][y][d[x][y]]+a[x]-(shu[x][y]-1)*a[y]<<endl;
-    }
-    return 0;
+    scanf("%s", s + 1);
+    n = strlen(s + 1);
+    p2[0] = 1;
+    for (int i = 1; i <= (n << 1); i++)
+        p2[i] = (p2[i - 1] << 1) % ZZQ;
+    for (int i = 2; i <= n; i++)
+        ans = (ans + solve(i)) % ZZQ;
+    return std::cout << ans << std::endl, 0;
 }
