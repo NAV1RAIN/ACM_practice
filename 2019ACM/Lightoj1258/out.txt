@@ -1,0 +1,12 @@
+ababababab
+9
+Case 1: 11
+srqp
+1
+Case 2: 7
+madamimadam
+11
+Case 3: 11
+aaababaaabcnna
+9
+Case 4: 19
