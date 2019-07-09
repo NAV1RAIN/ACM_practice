@@ -12,37 +12,35 @@ struct ListNode {
 class Solution {
 public:
     ListNode* addTwoNumbers(ListNode* l1, ListNode* l2) {
-        ListNode* ans = l1;
-        bool jl1, jl2;
-        jl1 = jl2 = true;
         int jw = 0;
-        while(jl1 || jl2) {
-            if(jl1 && jl2) l1->val += l2->val+jw;
-            else if(jl1) l1->val += jw;
-            else if(jl2) l2->val += jw;
-            if(jl1 && l1->val/10 != 0) {
-                jw = 1;
-                l1->val %= 10;
-            } else if(jl2 && l2->val/10 != 0) {
-                jw = 1;
-                l2->val %= 10;
-            } else {
+        ListNode* ans = l1;
+        int temp;
+        while(l1 != NULL && l2 != NULL) {
+            temp = l1->val+l2->val;
+            l1->val = (temp+jw)%10;
+            jw = (temp+jw)/10;
+            if(l1->next == NULL && l2->next == NULL && jw != 0) {
+                l1->next = new ListNode(jw);
+                l1 = l1->next;
                 jw = 0;
-            }
-            
-            if(l1->next == NULL) jl1 = false;
-            else l1 = l1->next;
-            if(l2->next == NULL) jl2 = false;
-            else if(jl1) l2 = l2->next;
-            else {
+                break;
+            } else if(l1->next == NULL) {
                 l1->next = l2->next;
-                l1 = l2->next;
-                l2 = l2->next;
+                l1 = l1->next;
+                break;
             }
-            // if(!jl1 && !jl2 && jw != 0) {
-            //     ListNode* tt = new ListNode(jw);
-            //     l1->next = tt;
-            // }
+            l1 = l1->next;
+            l2 = l2->next;
+        }
+        while(l1 != NULL && jw != 0) {
+            temp = l1->val+jw;
+            l1->val = temp%10;
+            jw = temp/10;
+            if(l1->next == NULL && jw != 0) {
+                l1->next = new ListNode(jw);
+                l1 = l1->next;
+            }
+            l1 = l1->next;
         }
         return ans;
     }
@@ -71,9 +69,8 @@ int main() {
         temp->next = t2;
         temp = t2;
     }
-    int hh = 0;
     ListNode* n3 = Solution().addTwoNumbers(n1, n2);
-    while(n3 != NULL && hh++ < 100) {
+    while(n3 != NULL) {
         printf("%d", n3->val);
         n3 = n3->next;
     }
