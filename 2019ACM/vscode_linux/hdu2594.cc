@@ -2,7 +2,7 @@
 #include <cstring>
 using namespace std;
 
-const int MAXN = 5e4 + 5;
+const int MAXN = 1e5+5;
 void kmp_pre(char x[], int next[]) {
     int i, j;
     j = next[0] = -1;
@@ -14,33 +14,25 @@ void kmp_pre(char x[], int next[]) {
     }
 }
 int next[MAXN];
-char s1[MAXN], s2[MAXN];
+char s1[MAXN];
 int main() {
-    freopen("RAW/in", "r", stdin);
-    freopen("RAW/out", "w", stdout);
+    // freopen("RAW/in", "r", stdin);
+    // freopen("RAW/out", "w", stdout);
     while (scanf("%s", s1) != EOF) {
         memset(next, 0, sizeof(next));
-        printf("%d\n", ans);
-        int m = strlen(s1), n = strlen(s2);
-        for(int i = 0; i <= m; i++) {
-            printf("%d ", next[i]);
-        }
-        printf("\n");
-        if (!ans) {
-            bool flag = true;
-            for (int i = 0; i < m; i++) {
-                if (s1[i] != s2[n - m + i]) flag = false;
-            }
-            if (!flag) {
-                printf("0\n");
-            } else {
-                printf("%s %d\n", s1, m);
-            }
-        } else {
-            for (int i = 0; i < ans; i++) {
+        int m = strlen(s1);
+        s1[m] = -1;
+        printf("%d\n", s1[m]);
+        scanf("%s", s1+m+1);
+        m = strlen(s1);
+        kmp_pre(s1, next);
+        if(next[m] != 0) {
+            for(int i = 0; i < next[m]; i++) {
                 printf("%c", s1[i]);
             }
-            printf(" %d\n", ans);
+            printf(" %d\n", next[m]);
+        } else {
+            printf("0\n");
         }
     }
     return 0;
