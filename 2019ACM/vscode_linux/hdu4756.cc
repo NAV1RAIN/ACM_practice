@@ -59,8 +59,8 @@ inline double distance(int x1, int y1, int x2, int y2) {
     return sqrt(((double)x1-x2)*(x1-x2)+((double)y1-y2)*(y1-y2));
 }
 int main() {
-    freopen("RAW/in", "r", stdin);
-    freopen("RAW/out", "w", stdout);
+    // freopen("RAW/in", "r", stdin);
+    // freopen("RAW/out", "w", stdout);
     int T;
     int n, k;
     scanf("%d", &T);
