@@ -25,8 +25,8 @@ void bind(int u, int v) {
     }
 }
 int main() {
-    freopen("RAW/in", "r", stdin);
-    freopen("RAW/out", "w", stdout);
+    // freopen("RAW/in", "r", stdin);
+    // freopen("RAW/out", "w", stdout);
     memset(F, -1, sizeof(F));
     int p;
     scanf("%d", &p);
