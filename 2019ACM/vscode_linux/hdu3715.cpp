@@ -1,22 +1,21 @@
 #include <bits/stdc++.h>
 using namespace std;
-const int MAXN = 30005;
-// const int MAXM = 2*MAXN;
+const int MAXN = 510;
+const int MAXM = MAXN*MAXN*2;
 struct Edge {
     int to, next;
-    Edge(int x, int y):to(x),next(y){}
-};
-vector<Edge> edge;
+} edge[MAXM];
+// vector<Edge> edge;
 int head[MAXN], tot;
 void init() {
     tot = 0;
-    edge.clear();
+    // edge.clear();
     memset(head, -1, sizeof(head));
 }
 void addedge(int u, int v) {
-    edge.push_back(Edge(v, head[u]));
-    // edge[tot].to = v;
-    // edge[tot].next = head[u];
+    // edge.push_back(Edge(v, head[u]));
+    edge[tot].to = v;
+    edge[tot].next = head[u];
     head[u] = tot++;
 }
 int Low[MAXN], DFN[MAXN], Stack[MAXN], Belong[MAXN];
@@ -48,10 +47,10 @@ void Tarjan(int u) {
         } while(v != u);
     }
 }
-int a[MAXN], b[MAXN], c[MAXN];
-bool TwoSat(int n) {
+int a[MAXM], b[MAXM], c[MAXM];
+bool TwoSat(int mid, int n) {
     init();
-    for(int i = 0; i < n; i++) {
+    for(int i = 0; i < mid; i++) {
         if(c[i] == 0) {
             addedge(a[i]<<1^1, b[i]<<1);
             addedge(b[i]<<1^1, a[i]<<1);
@@ -92,7 +91,7 @@ int main() {
         int ans = -1;
         while(l <= r) {
             int mid = (l+r)/2;
-            if(TwoSat(mid)) ans = mid, l = mid+1;
+            if(TwoSat(mid, n)) ans = mid, l = mid+1;
             else r = mid-1;
         }
         printf("%d\n", ans);
