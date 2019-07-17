@@ -13,7 +13,8 @@
                 "${workspaceFolder}/bin/${fileBasenameNoExtension}.o",
                 "-g",
                 "-Wall",
-                "-static-libgcc"
+                "-static-libgcc",
+                "-Wc++11-extensions"
             ],
             "group": {
                 "kind": "build",

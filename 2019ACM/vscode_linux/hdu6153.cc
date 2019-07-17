@@ -37,8 +37,8 @@ void KMP_Count(char x[], char y[], int next[]) {   //s2,s1
 int next1[MAXN];
 int next2[MAXN];
 int main() {
-    freopen("RAW/in", "r", stdin);
-    freopen("RAW/out", "w", stdout);
+    // freopen("RAW/in", "r", stdin);
+    // freopen("RAW/out", "w", stdout);
     int T;
     scanf("%d", &T);
     while(T--) {
