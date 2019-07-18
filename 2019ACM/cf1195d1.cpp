@@ -15,7 +15,7 @@ long long qmod(long long a, long long b) {
     return ans;
 }
 int main() {
-//    freopen("in.cc", "r", stdin);
+    freopen("in.cc", "r", stdin);
     int n;
     scanf("%d", &n);
     long long ans = 0;
