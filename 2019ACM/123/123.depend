@@ -1,0 +1,10 @@
+# depslib dependency file v1.0
+1563529030 source:/home/r4in/MyCode/ICPC_Contest_Practice/2019ACM/123/main.cpp
+	<iostream>
+	<stdio.h>
+	<string.h>
+	<map>
+	<set>
+	<algorithm>
+	<vector>
+
