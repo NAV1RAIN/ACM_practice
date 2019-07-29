@@ -14,7 +14,8 @@
                 "-g",
                 "-Wall",
                 "-static-libgcc",
-                "-Wc++11-extensions"
+                "-Wc++11-extensions",
+                "-std=c++11"
             ],
             "group": {
                 "kind": "build",
