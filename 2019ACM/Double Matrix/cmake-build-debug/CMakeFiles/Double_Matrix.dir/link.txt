@@ -1,3 +1,0 @@
-"C:\Program Files\JetBrains\CLion 2019.1.2\bin\cmake\win\bin\cmake.exe" -E remove -f CMakeFiles\Double_Matrix.dir/objects.a
-C:\MinGW\bin\ar.exe cr CMakeFiles\Double_Matrix.dir/objects.a @CMakeFiles\Double_Matrix.dir\objects1.rsp
-C:\MinGW\bin\g++.exe -g   -Wl,--whole-archive CMakeFiles\Double_Matrix.dir/objects.a -Wl,--no-whole-archive  -o Double_Matrix.exe -Wl,--out-implib,libDouble_Matrix.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\Double_Matrix.dir\linklibs.rsp

@@ -1,3 +1,0 @@
-F:/ACM/2019ACM/Zoning Restrictions Again/cmake-build-debug/CMakeFiles/rebuild_cache.dir
-F:/ACM/2019ACM/Zoning Restrictions Again/cmake-build-debug/CMakeFiles/Zoning_Restrictions_Again.dir
-F:/ACM/2019ACM/Zoning Restrictions Again/cmake-build-debug/CMakeFiles/edit_cache.dir

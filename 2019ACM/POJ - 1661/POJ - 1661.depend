@@ -1,8 +1,0 @@
-# depslib dependency file v1.0
-1563526087 source:/home/r4in/MyCode/ICPC_Contest_Practice/2019ACM/POJ - 1661/main.cpp
-	<cstdio>
-	<cstring>
-	<algorithm>
-	<cmath>
-	<queue>
-

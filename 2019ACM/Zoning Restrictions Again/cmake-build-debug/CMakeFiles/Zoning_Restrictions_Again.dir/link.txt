@@ -1,3 +1,0 @@
-"C:\Program Files\JetBrains\CLion 2019.1.2\bin\cmake\win\bin\cmake.exe" -E remove -f CMakeFiles\Zoning_Restrictions_Again.dir/objects.a
-C:\MinGW\bin\ar.exe cr CMakeFiles\Zoning_Restrictions_Again.dir/objects.a @CMakeFiles\Zoning_Restrictions_Again.dir\objects1.rsp
-C:\MinGW\bin\g++.exe -g   -Wl,--whole-archive CMakeFiles\Zoning_Restrictions_Again.dir/objects.a -Wl,--no-whole-archive  -o Zoning_Restrictions_Again.exe -Wl,--out-implib,libZoning_Restrictions_Again.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\Zoning_Restrictions_Again.dir\linklibs.rsp

@@ -1,3 +1,0 @@
-F:/ACM/2019ACM/poj3279/cmake-build-debug/CMakeFiles/poj3279.dir
-F:/ACM/2019ACM/poj3279/cmake-build-debug/CMakeFiles/edit_cache.dir
-F:/ACM/2019ACM/poj3279/cmake-build-debug/CMakeFiles/rebuild_cache.dir

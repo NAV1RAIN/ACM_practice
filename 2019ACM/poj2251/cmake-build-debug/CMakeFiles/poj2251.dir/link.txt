@@ -1,3 +1,0 @@
-"C:\Program Files\JetBrains\CLion 2019.1.2\bin\cmake\win\bin\cmake.exe" -E remove -f CMakeFiles\poj2251.dir/objects.a
-C:\MinGW\bin\ar.exe cr CMakeFiles\poj2251.dir/objects.a @CMakeFiles\poj2251.dir\objects1.rsp
-C:\MinGW\bin\g++.exe -g   -Wl,--whole-archive CMakeFiles\poj2251.dir/objects.a -Wl,--no-whole-archive  -o poj2251.exe -Wl,--out-implib,libpoj2251.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\poj2251.dir\linklibs.rsp
