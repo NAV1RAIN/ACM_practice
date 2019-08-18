@@ -1,3 +1,0 @@
-/mnt/d/MyCode/ICPC_Contest_Practice/2019ACM/t1/cmake-build-debug/CMakeFiles/rebuild_cache.dir
-/mnt/d/MyCode/ICPC_Contest_Practice/2019ACM/t1/cmake-build-debug/CMakeFiles/t1.dir
-/mnt/d/MyCode/ICPC_Contest_Practice/2019ACM/t1/cmake-build-debug/CMakeFiles/edit_cache.dir

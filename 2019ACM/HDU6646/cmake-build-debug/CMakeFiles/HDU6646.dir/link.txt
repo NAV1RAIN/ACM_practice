@@ -1,1 +1,0 @@
-/usr/bin/c++  -g  -rdynamic CMakeFiles/HDU6646.dir/main.cpp.o  -o HDU6646 
