@@ -17,5 +17,8 @@ const LL LNF = 0x3f3f3f3f3f3f3f3f;
 int main() {
     freopen("RAW/in", "r", stdin);
     freopen("RAW/out", "w", stdout);
+    int n, m;
+    scanf("%d%d", &n, &m);
+    for()
     return 0;
 }

@@ -29,8 +29,8 @@ int check(int c[], int sc, int a[], int sa, int b[], int sb) {
     return lim - sb - t;
 }
 int main() {
-    freopen("RAW/in", "r", stdin);
-    freopen("RAW/out", "w", stdout);
+    // freopen("RAW/in", "r", stdin);
+    // freopen("RAW/out", "w", stdout);
     int tt;
     int i, t;
     scanf("%d", &tt);
