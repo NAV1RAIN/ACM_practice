@@ -37,8 +37,8 @@ void SAM_init() {
     root = newnode(0);
 }
 SAM_Node* EXEND(SAM_Node* last, int x) {
-    SAM_Node *p = last;
-    SAM_Node *np = newnode(p->len + 1);
+    SAM_Node* p = last;
+    SAM_Node* np = newnode(p->len + 1);
     while (p && !p->next[x]) {
         p->next[x] = np, p = p->fa;
     }
@@ -70,7 +70,7 @@ void addedge(int u, int v) {
     edge[tot].next = head[u];
     head[u] = tot++;
 }
-SAM_Node *END[MAXN];
+SAM_Node* END[MAXN];
 int topcnt[MAXN];  //拓扑排序使用
 SAM_Node* topsam[MAXN * 2];
 
@@ -88,16 +88,15 @@ int main() {
     }
     memset(topcnt, 0, sizeof(topcnt));
     int num = tail - pool;
-    for(int i = 0; i < num; i++) topcnt[pool[i].len]++;
-    for(int i = 1; i <= len; i++) topcnt[i] += topcnt[i - 1];
-    for(int i = 0; i < num; i++) topsam[--topcnt[pool[i].len]] = &pool[i];
+    for (int i = 0; i < num; i++) topcnt[pool[i].len]++;
+    for (int i = 1; i <= len; i++) topcnt[i] += topcnt[i - 1];
+    for (int i = 0; i < num; i++) topsam[--topcnt[pool[i].len]] = &pool[i];
     long long ans = 0;
-    for(int i = num - 1; i >= 0; i--) {
-        SAM_Node *p = topsam[i];
+    for (int i = num - 1; i >= 0; i--) {
+        SAM_Node* p = topsam[i];
         p->cnt = 1;
-        printf("%c", )
-        for(int i = 0; i < 26; i++) {
-            if(p->next[i]) {
+        printf("%c", ) for (int i = 0; i < 26; i++) {
+            if (p->next[i]) {
                 printf("%c", i + 'a');
                 p->cnt += p->next[i]->cnt;
             }
