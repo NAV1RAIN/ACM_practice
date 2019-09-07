@@ -1,62 +1,70 @@
-#include <algorithm>
-#include <cmath>
-#include <cstdio>
-#include <cstring>
+#include <bits/stdc++.h>
 #include <iostream>
-#include <map>
-#include <queue>
-#include <set>
-#include <stack>
-#include <string>
-#include <vector>
 using namespace std;
-typedef long long ll;
-const ll MAXN = 1000050;
-ll a[MAXN], mod[MAXN];
-ll n, p;
-bool fg;
-
-inline ll pro(ll x, ll md) { return x < md ? x : x % md + md; }
-inline ll mi(ll x, ll y, ll md) {
-    ll z = 1;
-    for (; y; x = pro(1LL * x * x, md), y >>= 1)
-        if (y & 1) z = pro(1LL * z * x, md);
-    return z;
-}
-
-ll dfs(ll x, ll y, ll lim) {
-    if (x == lim) return a[x] >= mod[y] ? a[x] % mod[y] + mod[y] : a[x];
-    if (mod[y] == 1) return 1;
-    return mi(a[x], dfs(x + 1, y + 1, lim), mod[y]);
-}
+typedef long long LL;
+const int MAXN = 3e5 + 100;
+int n;
+char s[MAXN];
+struct S_AT {
+    int ch[MAXN][27], fail[MAXN], len[MAXN], siz[MAXN], tot, lst;
+    bool vis[MAXN][27];
+    int num[MAXN];
+    void init() {
+        tot = 1;
+        fail[0] = fail[1] = 1;
+        len[1] = -1;
+        memset(vis, 0, sizeof(vis));
+        memset(num, 0, sizeof(num));
+    }
+    void add(int c, int n) {
+        int p = lst;
+        while (s[n - len[p] - 1] != s[n])
+            p = fail[p];
+        if (!ch[p][c]) {
+            int now = ++tot, k = fail[p];
+            for (int i = 0; i < 27; i++) {
+                vis[now][i] = vis[p][i];
+            }
+            if (vis[now][c] == 0) {
+                vis[now][c] = 1;
+                num[now] = num[p] + 1;
+            } else {
+                num[now] = num[p];
+            }
+            len[now] = len[p] + 2;
+            //cout<<len[now]<<endl;
+            while (s[n - len[k] - 1] != s[n])
+                k = fail[k];
+            fail[now] = ch[k][c];
+            ch[p][c] = now;
+        }
+        lst = ch[p][c];
+        siz[lst]++;
+    }
+    LL solve() {
+        LL A = 0;
+        for (int i = tot; i; i--) {
+            siz[fail[i]] += siz[i];
+            A += siz[i] * num[i];
+            //cout << siz[i] << " " << len[i] <<" "<<num[i]<< "\n";
+            //ans = std::max(ans, 1ll * siz[i] * len[i]);
+        }
+        return A;
+    }
+} zkx;
 
 int main() {
-	freopen("RAW/in", "r", stdin);
-	freopen("RAW/out", "w", stdout);
-    ll x, y;
-    int T;
-    scanf("%d", &T);
-    while (T--) {
-		ll tt;
-		scanf("%lld", &tt);
-        scanf("%lld", &n);
-        scanf("%lld", &mod[1]);
-		if(n == 0 || tt == 1) {
-			if(mod[1] == 1) printf("0\n");
-			else printf("1\n");
-			continue;
-		}
-        for (ll i = 1; mod[i] > 1; ++i) {
-            mod[i + 1] = x = mod[i];
-            for (ll j = 2; j * j <= x; ++j) {
-                for (fg = 0; x % j == 0; x /= j, fg = true)
-                    ;
-                if (fg) mod[i + 1] = 1LL * mod[i + 1] * (j - 1) / j;
-            }
-            if (x > 1) mod[i + 1] = 1LL * mod[i + 1] * (x - 1) / x;
-        }
-        for (ll i = 1; i <= n; ++i) a[i] = tt;
-        printf("%lld\n", dfs(1, 1, n) % mod[1]);
+    //freopen("C:/Users/26254/Documentsxking/in.txt", "r", stdin);
+    //freopen("C:/Users/26254/Documentsxking/out.txt", "w", stdout);
+
+    scanf("%s", s + 1);
+    zkx.init();
+    n = strlen(s + 1);
+    for (int i = 1; i <= n; i++) {
+        zkx.add(s[i] - 'a' + 1, i);
     }
+    LL ans = zkx.solve();
+    printf("%lld", ans);
+
     return 0;
 }
