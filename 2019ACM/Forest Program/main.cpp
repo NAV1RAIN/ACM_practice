@@ -39,6 +39,7 @@ void DFS(int pre, int now) {
             }
             sum += cnt;
             ans = (ans * (quickPow(cnt, 2) - 1)) % MOD;
+            printf("%lld\n", quickPow(cnt, 2));
         } else {
             continue;
         }
