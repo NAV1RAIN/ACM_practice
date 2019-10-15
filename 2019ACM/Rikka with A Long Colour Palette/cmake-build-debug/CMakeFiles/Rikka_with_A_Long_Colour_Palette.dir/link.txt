@@ -1,0 +1,1 @@
+/usr/bin/c++  -g   CMakeFiles/Rikka_with_A_Long_Colour_Palette.dir/main.cpp.o  -o Rikka_with_A_Long_Colour_Palette 
