@@ -11,7 +11,7 @@ int main()
 {
     double sum=0,maxd=0;
     double a,b;
-    freopen("in.txt","r",stdin);
+    freopen("in","r",stdin);
     while(cin>>x>>x>>x>>x>>x>>a>>y>>b>>y>>y>>y>>y)
     {
         if(x[0]>='0'&&x[0]<='9')

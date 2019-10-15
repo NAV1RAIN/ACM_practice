@@ -1,7 +1,7 @@
 file(REMOVE_RECURSE
   "CMakeFiles/Forest_Program.dir/main.cpp.o"
-  "Forest_Program"
   "Forest_Program.pdb"
+  "Forest_Program"
 )
 
 # Per-language clean rules from dependency scanning.

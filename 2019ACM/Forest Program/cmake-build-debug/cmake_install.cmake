@@ -1,4 +1,4 @@
-# Install script for directory: /home/nav1r4in/MyCode/ICPC_Contest_Practice/2019ACM/Forest Program
+# Install script for directory: /mnt/d/MyCode/NoSensitive/ICPC_Contest_Practice/2019ACM/Forest Program
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -45,5 +45,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/home/nav1r4in/MyCode/ICPC_Contest_Practice/2019ACM/Forest Program/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/mnt/d/MyCode/NoSensitive/ICPC_Contest_Practice/2019ACM/Forest Program/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")
