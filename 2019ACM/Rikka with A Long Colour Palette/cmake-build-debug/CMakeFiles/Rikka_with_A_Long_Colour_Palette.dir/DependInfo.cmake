@@ -4,7 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/mnt/d/MyCode/NoSensitive/ICPC_Contest_Practice/2019ACM/Rikka with A Long Colour Palette/main.cpp" "/mnt/d/MyCode/NoSensitive/ICPC_Contest_Practice/2019ACM/Rikka with A Long Colour Palette/cmake-build-debug/CMakeFiles/Rikka_with_A_Long_Colour_Palette.dir/main.cpp.o"
+  "D:/MyCode/NoSensitive/ICPC_Contest_Practice/2019ACM/Rikka with A Long Colour Palette/main.cpp" "D:/MyCode/NoSensitive/ICPC_Contest_Practice/2019ACM/Rikka with A Long Colour Palette/cmake-build-debug/CMakeFiles/Rikka_with_A_Long_Colour_Palette.dir/main.cpp.obj"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 
