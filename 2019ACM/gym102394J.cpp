@@ -1,6 +1,6 @@
 #include <bits/stdc++.h>
 using namespace std;
-const int S = 8;
+const int S = 4;
 long long mult_mod(long long a, long long b, long long c) {
     a %= c;
     b %= c;
@@ -56,18 +56,21 @@ bool Miller_Rabin(long long n) {   //素数返回true,合数返回false
     return true;
 }
 int main() {
-    freopen("in", "r", stdin);
-    freopen("out", "w", stdout);
+    // freopen("in", "r", stdin);
+    // freopen("out", "w", stdout);
     int T;
     scanf("%d", &T);
     long long n;
     while(T--) {
-        scanf("%lld", &n);
-        if();
-        if(!(Miller_Rabin(n - 2LL))) {
-            if() printf("2 %d\n", n-2LL);
+        scanf("%I64d", &n);
+        if(n <= 5) {
+            printf("-1\n");
+            continue;
         }
-        else if(!(Miller_Rabin(n - 3LL))) printf("3 %d\n", n-3LL);
+        if(!(Miller_Rabin(n - 2LL))) {
+            printf("2 %I64d\n", n-2LL);
+        }
+        else if(!(Miller_Rabin(n - 3LL))) printf("3 %I64d\n", n-3LL);
         else printf("-1\n");
     }
     return 0;
