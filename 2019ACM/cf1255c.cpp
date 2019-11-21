@@ -23,13 +23,16 @@ int main() {
         ss.insert(node[i+1].b);
         ss.insert(node[i+1].c);
         int sLen = ss.size();
-        if(sLen > 4) jl = i+1;
+        if(sLen > 4) jl = i+1;：wa
     }
     for(int i = jl; i < n; i++) {
         pl.push_back(node[i]);
     }
     for(int i = 0; i < jl; i++) {
         pl.push_back(node[i]);
+    }
+    for(int i = 0; i < n; i++) {
+        
     }
     return 0;
 }
